@@ -20,7 +20,9 @@ var _ = {};
 *   _.identity(5) === 5
 *   _.identity({a: "b"}) === {a: "b"}
 */
-
+_.identity = function(value){
+    return value
+}
 
 /** _.typeOf
 * Arguments:
@@ -41,7 +43,25 @@ var _ = {};
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
-
+_.typeOf = function(value){
+if (typeof value === 'string'){
+    return 'string'
+}else if (Array.isArray(value)){
+    return 'array'
+}else if (typeof value === 'object' && !Array.isArray(value) && typeof value !== null && value instanceof !Date){
+    return 'object'
+}else if (typeof value === 'undefined'){
+    return 'undefined'
+}else if (typeof value === number){
+    return 'number'
+}else if (typeof value === boolean){
+    return 'boolean'
+}else if (value === null){
+    return 'null'
+}else {
+    return 'function'
+}
+}
 
 /** _.first
 * Arguments:
@@ -61,6 +81,7 @@ var _ = {};
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.first = 
 
 /** _.last
 * Arguments:
@@ -79,7 +100,7 @@ var _ = {};
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
-
+_.last =
 
 /** _.indexOf
 * Arguments:
@@ -97,6 +118,7 @@ var _ = {};
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf
 
 /** _.contains
 * Arguments:
@@ -113,6 +135,7 @@ var _ = {};
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
+_.contains
 
 /** _.each
 * Arguments:
@@ -130,6 +153,7 @@ var _ = {};
 *      -> should log "a" "b" "c" to the console
 */
 
+_.each
 
 /** _.unique
 * Arguments:
@@ -141,6 +165,7 @@ var _ = {};
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique
 
 /** _.filter
 * Arguments:
@@ -158,7 +183,20 @@ var _ = {};
 *   use _.each in your implementation
 */
 
+_.filter = function(array, func){
+    //create output array
+const output = [];
+//iterate using for loop
+for (let i = 0; i < array.length; i++)
+//determine if the result of invoking the callback on the current item, index, and array is true
+if(func(array[i], i, array) === true){
+    output.push(array[i]);
+}
+    //returning output
+    return output
+}
 
+var evens = _.filter([10, 11, 12, 13], function(num){return num % 2 === 0})
 /** _.reject
 * Arguments:
 *   1) An array
@@ -172,6 +210,7 @@ var _ = {};
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+_.reject
 
 /** _.partition
 * Arguments:
@@ -192,6 +231,7 @@ var _ = {};
 }
 */
 
+_.partition
 
 /** _.map
 * Arguments:
@@ -209,6 +249,16 @@ var _ = {};
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function(collection, func){
+// determining if collection is array
+//if (Array.isArray(collection === true)){
+//return true;
+//}else if {}
+
+
+
+
+};
 
 /** _.pluck
 * Arguments:
@@ -221,6 +271,7 @@ var _ = {};
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+_.pluck =
 
 /** _.every
 * Arguments:
@@ -243,6 +294,7 @@ var _ = {};
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every =
 
 /** _.some
 * Arguments:
@@ -285,6 +337,7 @@ var _ = {};
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce
 
 /** _.extend
 * Arguments:
@@ -300,6 +353,8 @@ var _ = {};
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
