@@ -48,15 +48,15 @@ if (typeof value === 'string'){
     return 'string'
 }else if (Array.isArray(value)){
     return 'array'
-}else if (typeof value === 'object' && !Array.isArray(value) && typeof value !== null && value instanceof !Date){
+}else if (typeof value === 'object'){
     return 'object'
 }else if (typeof value === 'undefined'){
     return 'undefined'
-}else if (typeof value === number){
+}else if (typeof value === 'number'){
     return 'number'
-}else if (typeof value === boolean){
+}else if (typeof value === 'boolean'){
     return 'boolean'
-}else if (value === null){
+}else if (typeof value === 'null' && typeof value !== 'undefined'){
     return 'null'
 }else {
     return 'function'
