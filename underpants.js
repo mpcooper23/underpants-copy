@@ -56,7 +56,7 @@ if (typeof value === 'string'){
     return 'number'
 }else if (typeof value === 'boolean'){
     return 'boolean'
-}else if (typeof value === 'null' && typeof value !== 'undefined' && typeof value !== 'object'){
+}else if (value === null){
     return 'null'
 }else {
     return 'function'
@@ -82,7 +82,15 @@ if (typeof value === 'string'){
 */
 
 _.first = function(arr, num){
-
+//for loop to isolate i for conditional statement
+for(let i = 0; i < arr.length; i++){
+    //if statement to check condition
+    if(!Array.isArray(arr)){
+return [];
+    }else if (!'number'){
+return arr[0]
+    }
+}
 }
 
 /** _.last
@@ -296,7 +304,29 @@ _.pluck =
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
-_.every =
+_.every = function(collection, func){
+//determine if collection is an array
+if (Array.isArray(collection)){
+    if (func === undefined){
+for(let i = 0; i < collection.length; i++){
+    if(!collection[i]){
+        return false
+    }
+}
+    }else {
+        for (let i = 0; i < collection.length;i++){
+            if(!func(collection[i], i, collection)){
+                return false
+            }
+        }
+    }
+
+}
+return true
+}
+
+
+
 
 /** _.some
 * Arguments:
