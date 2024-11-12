@@ -56,7 +56,7 @@ if (typeof value === 'string'){
     return 'number'
 }else if (typeof value === 'boolean'){
     return 'boolean'
-}else if (typeof value === 'null' && typeof value !== 'undefined'){
+}else if (typeof value === 'null' && typeof value !== 'undefined' && typeof value !== 'object'){
     return 'null'
 }else {
     return 'function'
@@ -81,7 +81,9 @@ if (typeof value === 'string'){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
-_.first = 
+_.first = function(arr, num){
+
+}
 
 /** _.last
 * Arguments:
