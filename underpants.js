@@ -70,23 +70,28 @@ if (Array.isArray(value)){
 *   _.first(["a", "b", "c"], 1) -> "a"
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 *I: an array, number
-*O:
+*O: first, determine if first parameter/input is an array (return [], if no); 
+//second, determine if second parameter is an inputted number 
+//or null (return first element of array, if so), for third case, 
+just return the first number items in array (i.e. 2 = ['a', 'b'])
 *C:
 *E:
-*
-*
-*
 */
 
 _.first = function(arr, num){
-//for loop to isolate i for conditional statement
-for(let i = 0; i < arr.length; i++){
-    //if statement to check condition
-    if(!Array.isArray(arr)){
-return [];
-    }else if (!'number'){
-return arr[0]
-    }
+    //first
+if(!Array.isArray(arr)){
+    return []
+}
+//second
+if(num !== 'number' || 'null'){
+    return arr[0]
+}else {
+    //looping to iterate through arr and isolate elements
+    for (let i = 0; i < arr.length; i++){
+    //how do I return number of array items to correspond to num?
+   return arr[i] += arr.push[num]
+}
 }
 }
 
@@ -106,8 +111,30 @@ return arr[0]
 *   _.last(["a", "b", "c"], "ponies") -> "c"
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
+*I: an array, number
+*O: first, determine if first parameter/input is an array (return [], if no); 
+//second, determine if second parameter is an inputted number 
+//or null (return LAST element of array, if so), for third case, 
+just return the LAST number items in array (i.e. 2 = ['a', 'b'])
+*C:
+*E:
 */
-_.last =
+_.last =function(arr, num){
+    //first
+if(!Array.isArray(arr)){
+    return []
+}
+//second
+if(num !== 'number' || 'null'){
+    return arr[arr.length - 1]
+}else {
+    //looping to iterate through arr and isolate elements
+    for (let i = 0; i < arr.length; i++){
+    //how do I return number of array items to correspond to num?
+   return arr[i] += arr.push[num]
+}
+}
+}
 
 /** _.indexOf
 * Arguments:
