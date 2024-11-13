@@ -86,14 +86,22 @@ if(!Array.isArray(arr)){
 //second
 if(num !== 'number' || 'null'){
     return arr[0]
+    //accounting for Edge case of negative numbers
+}else if (num < 0){
+    return []
+    //'should return the whole array if num is greater than arr length'
+}else if (num > arr.length){
+    return arr
 }else {
     //looping to iterate through arr and isolate elements
-    for (let i = 0; i < arr.length; i++){
+ for (let i = 0; i < num; i++){
     //how do I return number of array items to correspond to num?
-   return arr[i] += arr.push[num]
+ //   console.log(i)
+   return arr[i] 
+ }
 }
 }
-}
+
 
 /** _.last
 * Arguments:
