@@ -401,7 +401,23 @@ return true
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
-_.reduce
+_.reduce = function(array, func, seed){
+    let output;
+    //determine if seed value was not provided
+    if(seed === undefined){
+output = array[0];
+for(let i = 1; i <array.length; i++){
+    //reassign output to the result of invoking the callback function
+output = func(output, array[i], i)// what do we think is happening here?
+}
+    }else {output = seed;
+    for(let i = 0; i < array.length; i++){
+        output = (func(output, array[i], i));
+    }
+}
+return output;
+    };
+
 
 /** _.extend
 * Arguments:
@@ -417,6 +433,8 @@ _.reduce
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+
 
 _.extend
 
