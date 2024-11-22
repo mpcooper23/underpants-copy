@@ -90,8 +90,7 @@ if(num < 0){
     return arr[0]
     //accounting for Edge case of negative numbers
 }else {
-    //looping to iterate through arr and isolate elements
- for (let i = 0; i < num; i++){
+    for (let i = 0; i < num; i++){
     //how do I return number of array items to correspond to num?
  //   console.log(i)
    return arr[i] 
