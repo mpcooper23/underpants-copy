@@ -123,12 +123,13 @@ just return the LAST number items in array (i.e. 2 = ['a', 'b'])
 *E:
 */
 _.last =function(arr, num){
-    //first
-if(!Array.isArray(arr)){
-    return []
-}
-//second
-if(num !== 'number' || 'null'){
+    if(num < 0){
+        return []
+    }else if (num > arr.length){
+        return arr
+    }else if (!Array.isArray(arr)){
+        return []
+    } else if(num !== 'number' || 'null'){
     return arr[arr.length - 1]
 }else {
     //looping to iterate through arr and isolate elements
