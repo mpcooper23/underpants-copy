@@ -87,7 +87,7 @@ if(!Array.isArray(arr)){
 if(num !== 'number' || 'null'){
     return arr[0]
     //accounting for Edge case of negative numbers
-}else if (num < 0){
+}else if (num >= 0 !== true){
     return []
     //'should return the whole array if num is greater than arr length'
 }else if (num > arr.length){
