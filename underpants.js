@@ -80,18 +80,15 @@ just return the first number items in array (i.e. 2 = ['a', 'b'])
 
 _.first = function(arr, num){
     //first
-if(!Array.isArray(arr)){
+if(num < 0){
     return []
-}
-//second
-if(num !== 'number' || 'null'){
-    return arr[0]
-    //accounting for Edge case of negative numbers
-}else if (num >= 0 !== true){
-    return []
-    //'should return the whole array if num is greater than arr length'
 }else if (num > arr.length){
     return arr
+}else if (!Array.isArray(arr)){
+    return []
+} else if(num !== 'number' || 'null'){
+    return arr[0]
+    //accounting for Edge case of negative numbers
 }else {
     //looping to iterate through arr and isolate elements
  for (let i = 0; i < num; i++){
