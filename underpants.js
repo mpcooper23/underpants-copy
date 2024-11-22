@@ -90,13 +90,12 @@ if(num < 0){
     return arr[0]
     //should accept an argument representing the number of items to include in the output
 }else {
-    for (let i = 0; i < num; i++){
-    //how do I return number of array items to correspond to num?
+ //how do I return number of array items to correspond to num?
  //   console.log(i)
    return arr[i] 
  }
 }
-}
+
 
 
 /** _.last
