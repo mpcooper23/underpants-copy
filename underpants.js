@@ -122,7 +122,7 @@ just return the LAST number items in array (i.e. 2 = ['a', 'b'])
 *C:
 *E:
 */
-_.last =function(arr, num){
+_.last = function(arr, num){
     if(num < 0){
         return []
     }else if (num > arr.length){
@@ -156,7 +156,12 @@ _.last =function(arr, num){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
-_.indexOf
+_.indexOf = function(arr, val) {
+//Return -1 if <value> is not in <array>
+if (!Array.isArray(val)){
+    return - 1
+} 
+}
 
 /** _.contains
 * Arguments:
@@ -173,7 +178,9 @@ _.indexOf
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
-_.contains
+_.contains = function(arr, val) {
+arr === val ? 'true' : 'false'
+}
 
 /** _.each
 * Arguments:
@@ -191,7 +198,9 @@ _.contains
 *      -> should log "a" "b" "c" to the console
 */
 
-_.each
+_.each = function() {
+
+}
 
 /** _.unique
 * Arguments:
@@ -203,7 +212,9 @@ _.each
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
-_.unique
+_.unique = function() {
+
+}
 
 /** _.filter
 * Arguments:
@@ -248,7 +259,9 @@ var evens = _.filter([10, 11, 12, 13], function(num){return num % 2 === 0})
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
-_.reject
+_.reject = function() {
+
+}
 
 /** _.partition
 * Arguments:
@@ -269,7 +282,9 @@ _.reject
 }
 */
 
-_.partition
+_.partition = function() {
+
+}
 
 /** _.map
 * Arguments:
@@ -287,13 +302,14 @@ _.partition
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
-_.map = function(collection, func){
-// determining if collection is array
-//if (Array.isArray(collection === true)){
-//return true;
-//}else if {}
+_.map = function(array, func){
+var output = [];
+for(let i = 0; i < array.length; i++){
+var result = func(array[i], i, array);
+    output.push(result);
+}
 
-
+return output;
 
 
 };
@@ -309,7 +325,9 @@ _.map = function(collection, func){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
-_.pluck =
+_.pluck = function() {
+
+}
 
 /** _.every
 * Arguments:
@@ -377,6 +395,9 @@ return true
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+_.some = function() {
+
+}
 
 /** _.reduce
 * Arguments:
@@ -432,7 +453,9 @@ return output;
 
 
 
-_.extend
+_.extend = function() {
+
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
