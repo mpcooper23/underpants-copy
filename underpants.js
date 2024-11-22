@@ -88,7 +88,7 @@ if(num < 0){
     return []
 } else if(num !== 'number' || 'null'){
     return arr[0]
-    //accounting for Edge case of negative numbers
+    //should accept an argument representing the number of items to include in the output
 }else {
     for (let i = 0; i < num; i++){
     //how do I return number of array items to correspond to num?
