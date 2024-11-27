@@ -245,7 +245,7 @@ if(func(array[i], i, array) === true){
     return output
 }
 
-var evens = _.filter([10, 11, 12, 13], function(num){return num % 2 === 0})
+//var evens = _.filter([10, 11, 12, 13], function(num){return num % 2 === 0})
 /** _.reject
 * Arguments:
 *   1) An array
@@ -302,17 +302,20 @@ _.partition = function() {
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
-_.map = function(array, func){
-var output = [];
-for(let i = 0; i < array.length; i++){
-var result = func(array[i], i, array);
-    output.push(result);
+_.map = function(collection, func){
+    const output = [];//set output arr
+    if(Array.isArray(collection)){ //check to see if collection is array
+        for(let i = 0; i < collection.length; i++){//loop; if true, return function invocation
+            output.push(func(collection[i], i, collection))
+        }
+    }else if (typeof value === object){ //check if it's an object, if not an array
+        for(let key in object){//for-in loop object
+            output.push(func(object[key], key, object))//if true, return func invocation
+        }
+    } 
+   return output
 }
 
-return output;
-
-
-};
 
 /** _.pluck
 * Arguments:
