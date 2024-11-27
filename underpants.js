@@ -308,9 +308,9 @@ _.map = function(collection, func){
         for(let i = 0; i < collection.length; i++){//loop; if true, return function invocation
             output.push(func(collection[i], i, collection))
         }
-    }else (typeof value === object){ //check if it's an object, if not an array
+    }else { //check if it's an object, if not an array
         for(let key in collection){//for-in loop object
-            output.push(func(object[key], key, object))//if true, return func invocation
+            output.push(func(collection[key], key, collection))//if true, return func invocation
         }
     } 
    return output
