@@ -80,20 +80,20 @@ just return the first number items in array (i.e. 2 = ['a', 'b'])
 
 _.first = function(arr, num){
     //first
-if(num < 0){
+if(!Array.isArray(arr)){
     return []
 }else if (num > arr.length){
     return arr
-}else if (!Array.isArray(arr)){
+}else if (num < 0){
     return []
-} else if(num !== 'number' || 'null'){
+}else if(num !== 'number' || 'null'){
     return arr[0]
     //should accept an argument representing the number of items to include in the output
 }else {
  //how do I return number of array items to correspond to num?
- //   console.log(i)
-   return arr[i] 
+  let output = arr.length += num
  }
+ return output
 }
 
 
@@ -160,9 +160,14 @@ _.indexOf = function(arr, val) {
 //Return -1 if <value> is not in <array>
 if (!Array.isArray(val)){
     return - 1
-} 
+}else {
+    for(let i = 0; i < arr.length; i++){
+    if (arr[i] === typeof(val)) {
+        return arr[i]
+    }
+  }
 }
-
+}
 /** _.contains
 * Arguments:
 *   1) An array
@@ -179,7 +184,7 @@ if (!Array.isArray(val)){
 */
 
 _.contains = function(arr, val) {
-arr === val ? 'true' : 'false'
+//arr === val ? 'true' : 'false'
 }
 
 /** _.each
