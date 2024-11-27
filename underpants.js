@@ -160,7 +160,7 @@ _.indexOf = function(arr, val) {
 //Return -1 if <value> is not in <array>
 if (!Array.isArray(val)){
     return - 1
-}else {
+}else if (Array.isArray(val)){
     for(let i = 0; i < arr.length; i++){
     if (arr[i] === typeof(val)) {
         return arr[i]
@@ -184,7 +184,15 @@ if (!Array.isArray(val)){
 */
 
 _.contains = function(arr, val) {
-//arr === val ? 'true' : 'false'
+    if (arr.length > 0){
+       return true
+    }else if (arr.length <= 0){
+        {return false
+    }
+    for (let i = 0; i < arr.length; i++){
+arr[i] === val ? 'true' : 'false'
+}
+}
 }
 
 /** _.each
