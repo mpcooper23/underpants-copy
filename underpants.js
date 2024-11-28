@@ -184,15 +184,14 @@ if (!Array.isArray(val)){
 */
 
 _.contains = function(arr, val) {
+     for (let i = 0; i < arr.length; i++){
     if (arr.length > 0){
        return true
     }else if (arr.length <= 0){
-        {return false
+        return false
+    }else {
+        arr[i] === val ? 'true' : 'false'}
     }
-    for (let i = 0; i < arr.length; i++){
-arr[i] === val ? 'true' : 'false'
-}
-}
 }
 
 /** _.each
@@ -211,8 +210,16 @@ arr[i] === val ? 'true' : 'false'
 *      -> should log "a" "b" "c" to the console
 */
 
-_.each = function() {
-
+_.each = function(collection, func) {
+for (let i = 0; i < collection.length; i++){
+    if (Array.isArray(collection)){
+        func(collection[i], i, collection)
+    }else if (isObject(collection)){
+for(let key in collection){
+    func(collection[key], [key], collection)
+}
+    }
+}
 }
 
 /** _.unique
@@ -225,7 +232,7 @@ _.each = function() {
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
-_.unique = function() {
+_.unique = function(arr) {
 
 }
 
