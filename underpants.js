@@ -234,7 +234,12 @@ for(let key in collection){
 
 _.unique = function(arr) {
 let newArr = [] //output arr
-for(let i = 0; i < arr.length; i++)
+for(let i = 0; i < arr.length; i++){
+    //setting up for loop to return non-duplicate array
+    //if(){   //need to use indexOf()
+
+    //}
+}
 }
 
 /** _.filter
@@ -419,7 +424,7 @@ return true
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
-_.some = function() {
+_.some = function(collection, func) {
 
 }
 
