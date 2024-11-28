@@ -425,7 +425,11 @@ return true
 */
 
 _.some = function(collection, func) {
-
+if (array.isArray(collection)){
+    func(collection[i], i, collection)
+}else if (value === isObject(collection)){
+    func(collection[key], [key], collection)
+}
 }
 
 /** _.reduce
