@@ -219,7 +219,7 @@ for(let key in collection){
     func(collection[key], [key], collection)
 }
     }
-}
+  }
 }
 
 /** _.unique
@@ -233,7 +233,8 @@ for(let key in collection){
 */
 
 _.unique = function(arr) {
-
+let newArr = [] //output arr
+for(let i = 0; i < arr.length; i++)
 }
 
 /** _.filter
