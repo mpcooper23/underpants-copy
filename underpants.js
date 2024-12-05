@@ -71,7 +71,7 @@ if (Array.isArray(value)){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 *I: an array, number
 *O: first, determine if first parameter/input is an array (return [], if no); 
-//second, determine if second parameter is an inputted number 
+//second, determine if second parameter is a number datatype 
 //or null (return first element of array, if so), for third case, 
 just return the first number items in array (i.e. 2 = ['a', 'b'])
 *C:
@@ -82,18 +82,23 @@ _.first = function(arr, num){
     //first
 if(!Array.isArray(arr)){
     return []
-}else if (num > arr.length){
+}
+//second
+if (num === NaN || num === undefined){
+    return arr[0]
+}
+
+if (num > arr.length){
     return arr
 }else if (num < 0){
     return []
-}else if(num !== 'number' || 'null'){
-    return arr[0]
-    //should accept an argument representing the number of items to include in the output
 }else {
- //how do I return number of array items to correspond to num?
-  let output = arr.length += num
- }
+     let output = ''
+     for (let i = 0; i < arr.length; i++){
+   output = arr[i] += num
+}
  return output
+}
 }
 
 
