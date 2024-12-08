@@ -277,6 +277,9 @@ if(func(array[i], i, array) === true){
 }
 
 //var evens = _.filter([10, 11, 12, 13], function(num){return num % 2 === 0})
+
+
+
 /** _.reject
 * Arguments:
 *   1) An array
