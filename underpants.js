@@ -237,14 +237,9 @@ for(let key in collection){ //loop over keys
 */
 
 _.unique = function(arr) {
-let newArr = [] //output arr
-for(let i = 0; i < arr.length; i++){
-    //setting up for loop to return non-duplicate array
-    //if(){   //need to use indexOf()
 
-    //}
 }
-}
+
 
 /** _.filter
 * Arguments:
