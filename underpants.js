@@ -309,7 +309,7 @@ return newArr
 *   1) An array
 *   2) A function
 * Objectives:
-*   1) Call <function> for each element in <array> passing it the arguments:
+*   1) Call <function> for each element in <array> passing in the arguments:
 *       element, key, <array>
 *   2) Return an array that is made up of 2 sub arrays:
 *       0) An array that contains all the values for which <function> returned something truthy
@@ -323,8 +323,18 @@ return newArr
 }
 */
 
-_.partition = function() {
+_.partition = function(arr, func) {
 
+let truthyArr = [];
+let falsyArr = [];
+for(let i = 0; i < arr.length; i++){
+    if(func(arr[i], i, arr)){
+        truthyArr.push(arr[i])
+}else {
+        falsyArr.push(arr[i])
+    }
+}
+return [truthyArr, falsyArr]
 }
 
 /** _.map
