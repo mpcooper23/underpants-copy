@@ -193,7 +193,6 @@ return false;
      }
     }
       return false;
-    
 }
 
 /** _.each
@@ -383,7 +382,7 @@ _.pluck = function(arr, prop) {
 return _.map(arr, function(obj){//anonymous func invocation on each obj that map iterates over
 return obj[prop]; //remember that .map transforms elements that are then pushed in a new array to return
 }); //_.pluck uses _.map to create a new arr by applying a func to each element in the arr parameter. 
-}.   //the inner-func extracts the value of the specified prop from each obj, returning an arr of those values
+};  //the inner-func extracts the value of the specified prop from each obj, returning an arr of those values
 
 //example usage ===> console.log(_.pluck([{a: "one"}, {b: "two"}, {a: "three"}], "a")) // logs ["one", "three"]
 
@@ -533,7 +532,7 @@ return output;
 
 
 
-_.extend = function() {
+_.extend = function(obj1, obj2) {
 
 }
 
