@@ -454,11 +454,29 @@ return true
 */
 
 _.some = function(collection, func) {
-if (array.isArray(collection)){
-    func(collection[i], i, collection)
-}else if (value === isObject(collection)){
-    func(collection[key], [key], collection)
+    if(typeof func !== 'function'){//if no func parameter, check if at least one element is truthy
+for(let key in collection){
+    if(collection[key]){
+        return true;
+    }
 }
+return false;
+    }
+
+if (Array.isArray(collection)){
+    for(let i = 0; i < collection.length; i++){
+    if(func(collection[i], i, collection)){
+        return true; //return true if the func returns a truthy value
+    }
+}
+}else if (typeof collection === 'object' && collection !== null){
+    for(let key in collection){
+   if(func(collection[key], key, collection)){
+    return true;
+   }
+}
+}
+return false; //return false if the function returns falsy for all elements
 }
 
 /** _.reduce
