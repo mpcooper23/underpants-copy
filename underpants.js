@@ -79,27 +79,21 @@ just return the first number items in array (i.e. 2 = ['a', 'b'])
 */
 
 _.first = function(arr, num){
-    //first
-if(!Array.isArray(arr)){
+if(!Array.isArray(arr)){//first
+    return [];
+}
+if (typeof num !== 'number'){//second
+    return arr[0];
+}
+if (num > arr.length){//Edge case: What if <number> is greater than <array>.length?
+    return arr
+}
+if (num < 0){ //Edge Case: what if number is negative?
     return []
 }
-//second
-if (num === NaN || num === undefined){
-    return arr[0]
+ return arr.slice(0, num)//Otherwise, return the first <number> items of <array>
 }
 
-if (num > arr.length){
-    return arr
-}else if (num < 0){
-    return []
-}else {
-     let output = ''
-     for (let i = 0; i < arr.length; i++){
-   output = arr[i] += num
-}
- return output
-}
-}
 
 
 
