@@ -237,7 +237,13 @@ for(let key in collection){ //loop over keys
 */
 
 _.unique = function(arr) {
-arr.indexOf()
+    let uniqueArr = [];
+for(let i = 0; i < arr.length; i++){//loop
+   if(_.indexOf(uniqueArr, arr[i]) === -1){//invoke _.indexOf to check if element 
+    uniqueArr.push(arr[i])                   // is already in uniqueArr;
+   }                                           //if not, push element in uniqueArr
+}
+return uniqueArr;          //remember to return uniqueArr (just before final curly bracket)
 }
 
 
