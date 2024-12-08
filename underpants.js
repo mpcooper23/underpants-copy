@@ -91,7 +91,7 @@ if (num > arr.length){//Edge case: What if <number> is greater than <array>.leng
 if (num < 0){ //Edge Case: what if number is negative?
     return []
 }
- return arr.slice(0, num)//Otherwise, return the first <number> items of <array>
+return arr.slice(0, num); //STUDY SLICE!!!
 }
 
 
@@ -122,22 +122,21 @@ just return the LAST number items in array (i.e. 2 = ['a', 'b'])
 *E:
 */
 _.last = function(arr, num){
-    if(num < 0){
+    if(num < 0){//What if <number> is negative?
         return []
-    }else if (num > arr.length){
+    }
+    if (num > arr.length){//What if <number> is greater than <array>.length?
         return arr
-    }else if (!Array.isArray(arr)){
+    }
+    if (!Array.isArray(arr)){//If <array> is not an array, return []
         return []
-    } else if(num !== 'number' || 'null'){
-    return arr[arr.length - 1]
-}else {
-    //looping to iterate through arr and isolate elements
-    for (let i = 0; i < arr.length; i++){
-    //how do I return number of array items to correspond to num?
-   return arr[i] += arr.push[num]
+    } if(typeof num !== 'number'){//If <number> is not given or not a number, 
+    return arr[arr.length - 1]     //return just the last element in <array>.
+    }
+return arr.slice(arr.length - num)//STUDY SLICE!!!
 }
-}
-}
+
+
 
 /** _.indexOf
 * Arguments:
