@@ -237,7 +237,7 @@ for(let key in collection){ //loop over keys
 */
 
 _.unique = function(arr) {
-
+arr.indexOf()
 }
 
 
