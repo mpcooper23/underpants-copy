@@ -156,9 +156,10 @@ return arr.slice(arr.length - num)//STUDY SLICE!!!
 
 _.indexOf = function(arr, val) {
 //Return -1 if <value> is not in <array>
-if (!Array.isArray(val)){
+if (!Array.isArray(val)){//Return -1 if <value> is not in <array></array>
     return - 1
-}else if (Array.isArray(val)){
+}
+ if (Array.isArray(val)){
     for(let i = 0; i < arr.length; i++){
     if (arr[i] === typeof(val)) {
         return arr[i]
