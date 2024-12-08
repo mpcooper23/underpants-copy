@@ -156,17 +156,18 @@ return arr.slice(arr.length - num)//STUDY SLICE!!!
 
 _.indexOf = function(arr, val) {
 //Return -1 if <value> is not in <array>
-if (!Array.isArray(val)){//Return -1 if <value> is not in <array></array>
+if (!Array.isArray(arr)){//Return -1 if <value> is not in <array></array>
     return - 1
-}
- if (Array.isArray(val)){
-    for(let i = 0; i < arr.length; i++){
-    if (arr[i] === typeof(val)) {
-        return arr[i]
+}else {
+for(let i = 0; i < arr.length; i++){
+    if (arr[i] === val) {
+        return i //just return index of first occurence, not arr[i]
     }
   }
 }
+return - 1;
 }
+
 /** _.contains
 * Arguments:
 *   1) An array
