@@ -184,14 +184,16 @@ return - 1;
 */
 
 _.contains = function(arr, val) {
-     for (let i = 0; i < arr.length; i++){
-    if (arr.length > 0){
-       return true
-    }else if (arr.length <= 0){
-        return false
-    }else {
-        arr[i] === val ? 'true' : 'false'}
+    if (val === undefined){
+return false;
     }
+     for (let i = 0; i < arr.length; i++){
+    if (arr[i] === val) {
+        return true
+     }
+    }
+      return false;
+    
 }
 
 /** _.each
