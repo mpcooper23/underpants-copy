@@ -379,9 +379,13 @@ _.map = function(collection, func){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
-_.pluck = function() {
-
+_.pluck = function(arr, prop) {
+return _.map(arr, function(obj){//anonymous func invocation on each obj that map iterates over
+return obj[prop]; //remember that .map transforms elements that are then pushed in a new array to return
+});
 }
+
+//example usage ===> console.log(_.pluck([{a: "one"}, {b: "two"}, {a: "three"}], "a")) // logs ["one", "three"]
 
 /** _.every
 * Arguments:
