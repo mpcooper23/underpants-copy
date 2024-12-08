@@ -212,17 +212,19 @@ return false;
 *      -> should log "a" "b" "c" to the console
 */
 
-_.each = function(collection, func) {
-for (let i = 0; i < collection.length; i++){
-    if (Array.isArray(collection)){
+_.each = function(collection, func) { //first Underpants higher-order func 
+if (Array.isArray(collection)){//if collection is arr
+for (let i = 0; i < collection.length; i++){//loop to call func on each element
+    
         func(collection[i], i, collection)
-    }else if (isObject(collection)){
-for(let key in collection){
-    func(collection[key], [key], collection)
+    }
+}else if (typeof collection === 'object' && collection !== null){//ELSE IF collection is obj
+for(let key in collection){ //loop over keys
+    func(collection[key], [key], collection)//invoke callback on each key
 }
     }
   }
-}
+
 
 /** _.unique
 * Arguments:
