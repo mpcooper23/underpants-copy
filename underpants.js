@@ -532,9 +532,25 @@ return output;
 
 
 
-_.extend = function(obj1, obj2) {
-
+_.extend = function(obj1, ...objs) {
+objs.forEach(obj => {
+for(let key in obj){
+    if(obj.hasOwnProperty(key)){
+        obj1[key] = obj[key]; //copy each prop to obj1
+    }
 }
+});
+return obj1; //return updated obj1
+}
+
+
+// Example usage:
+let data = {a: "one"};
+_.extend(data, {b: "two"});
+console.log(data); // => {a: "one", b: "two"}
+
+_.extend(data, {a: "two"});
+console.log(data); // => {a: "two", b: "two"}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
